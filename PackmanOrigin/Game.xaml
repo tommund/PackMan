@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="PackmanOrigin.Game"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PackmanOrigin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+       
+        <Image Source="/Assets/Images/PackManBackground.jpg" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="7" 
+               Grid.RowSpan="6" Stretch="Fill"/>
+        <TextBlock Padding="0,0,0,0"  FontSize="120"   Foreground="BlueViolet"  Text="Pac-Man" Grid.Row="0" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="5"/>
+        <Button x:Name="exit" Content="Exit" Grid.Row ="5" Grid.Column="0" Width="70" Height="50" VerticalAlignment="Center"
+                Background="BlueViolet"  FontSize="30" HorizontalAlignment="Center" Click = "Exit_Click"/>
+        <Button x:Name="easy" Content="Easy" Grid.Row ="4" Grid.Column="2" Width="130" Height="50" 
+                Background="BlueViolet" FontFamily="Georgia" FontStyle="Italic"  FontSize="30" HorizontalAlignment="Center" Click="Easy_Click"/>
+        <Button x:Name="Medium" Content="Medium" FontFamily="Georgia" FontStyle="Italic" Grid.Row ="4" Grid.Column="3" Width="130" Height="50" 
+                Background="BlueViolet"  FontSize="30" HorizontalAlignment="Center" Click="Medium_Click"/>
+        <Button x:Name="Hard" Content="Hard" FontFamily="Georgia" FontStyle="Italic" Grid.Row ="4" Grid.Column="4" Width="130" Height="50" 
+                Background="BlueViolet"  FontSize="30" HorizontalAlignment="Center" Click="Hard_Click"/>
+        <TextBlock  Foreground="BlueViolet"   Grid.Row ="4" Grid.Column="1"  
+                  FontSize="30" HorizontalAlignment="Center"> <Bold>Choose <LineBreak/> Difficulty:  </Bold>  </TextBlock>
+        
+    </Grid>
+</Page>
