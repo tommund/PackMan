@@ -77,8 +77,6 @@ namespace PackmanOrigin.GameClasses.Enemies
         private Path FindMinPath(int sourceRowInd, int sourceColInd, int targetRowInd, int targetColInd, TileObject[,] tileImageArray)
         {
             InitializeDijkstrTable(sourceRowInd, sourceColInd, tileImageArray);
-
-
             Data current = GetCurrentData();
          
             while ((current != null) && current.MinTotalWeight < int.MaxValue)
@@ -140,7 +138,7 @@ namespace PackmanOrigin.GameClasses.Enemies
 
         private void FindUpdateNeighbours(Data current, TileObject[,] tileImageArray)
         {
-            // find current neighbours indices, make sure indices are okay(inside board,and not a break type..)
+            // find current neighbours indices, make sure indices are okay(inside board,and not a brick type..)
             // Once we update a neighbor - Update its previous data indices to current indices
 
             //indices of arrayBounds

@@ -42,8 +42,6 @@ namespace PackmanOrigin
             Window.Current.CoreWindow.KeyUp += UserKeyUp;
             _timer.Tick += GameLoop;
             _timer.Interval = new TimeSpan(0, 0, 0, 0, 10); // game itiration every 1/100 seconds
-
-            
         }
 
         private void GameLoop(object sender, object e)
@@ -84,12 +82,11 @@ namespace PackmanOrigin
                     }
                     if (_board[i, j] == 3) _enemies.Add(new Enemy(Leftlocation * j, topLocation * i, enemiesImagesPath[Enemiesindex++]));
                     if (_board[i, j] == 4) _enemies.Add(new SmartEnemy(Leftlocation * j, topLocation * i, i, j));
-                    if (_board[i, j] == 5) _pc = new PackManCharacter(Leftlocation * j, topLocation * i, 3,i,j);
+                    if (_board[i, j] == 5) _pc = new PackManCharacter(Leftlocation * j, topLocation * i,i,j);
                 }
             }
             for (int i = 0; i < _enemies.Count; i++) _enemies[i].AddObjectToCanvas(_canvas);
             _pc.AddObjectToCanvas(_canvas);
-
             Configuration.TotalPoints = 0;
             
         }
@@ -234,13 +231,13 @@ namespace PackmanOrigin
         {
             _timeCounter = 0;
             Configuration.TotalPoints = 0;
-            _pc.Lives = _pc.StartLives;
+            _pc.Lives = PackManCharacter.StartLives;
             InitCoinsList();
             RemoveMovingOFromCanvas();
             AddMovingObjectsToCanvas();
             SetToStartPosition();
             MainPage.ChangeScoreText(0);
-            MainPage.ChangeLivesText(_pc.StartLives);
+            MainPage.ChangeLivesText(PackManCharacter.StartLives);
             MainPage.Audio(false);
             StartGame();
         }

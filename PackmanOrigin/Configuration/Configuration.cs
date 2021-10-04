@@ -10,6 +10,7 @@ namespace PackmanOrigin
     {
        
         public static int TotalPoints { get;  set; }
+
         private  const  int _TileSize = 24;
         public static int TileSize { get { return _TileSize; } }
 

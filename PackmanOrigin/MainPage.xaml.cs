@@ -37,7 +37,7 @@ namespace PackmanOrigin
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
+
             try
             {
                 Enemy.MovmentSpeed = (int)e.Parameter;
@@ -49,9 +49,8 @@ namespace PackmanOrigin
 
 
             _gameManager = new GameManager(canvas);
-                _gameManager.IinitializeGame();
-
-                _gameManager.StartGame();
+            _gameManager.IinitializeGame();
+            _gameManager.StartNewGame();
         }
 
         private void New_Game(object sender, RoutedEventArgs e)

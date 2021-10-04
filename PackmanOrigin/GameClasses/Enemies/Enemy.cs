@@ -13,6 +13,7 @@ namespace PackmanOrigin.GameClasses.Enemies
         public readonly int WIDTH = TileObject.WIDTH;
         public double BeforeMoveLeft { get; set; }
         public double BeforeMoveTop { get; set; }
+        private bool _IsOnAJunction { get; set; }
 
         private static int _movmentSpeed = 1;
         public static int MovmentSpeed
@@ -25,14 +26,14 @@ namespace PackmanOrigin.GameClasses.Enemies
                 _movmentSpeed = value;
             }
         }
-        public bool IsOnAJunction { get; set; }
+       
 
         public Enemy(double leftLocation, double topLocation, string imagePath,bool isOnJunction =true)
             : base(leftLocation, topLocation, imagePath)
         {
             Image.Height = Height;
             Image.Width = WIDTH;
-            IsOnAJunction = isOnJunction;
+            _IsOnAJunction = isOnJunction;
         }
         public virtual void EnemyMovmentLogic(TileObject[,] tileImageArray,Canvas can)
         {
@@ -78,7 +79,7 @@ namespace PackmanOrigin.GameClasses.Enemies
                     {
                         row = i;
                         column = j;
-                        IsOnAJunction = true;
+                        _IsOnAJunction = true;
                         return true;
                     }
                 }

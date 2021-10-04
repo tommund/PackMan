@@ -2,7 +2,7 @@
 {
     class BoardGame
     {
-        // appearance of the game, 28 columns,31 rows
+        // Appearance of the game, 28 columns,31 rows
         
         readonly int[,] gameMap = new int[,] {
                 //                      //middle

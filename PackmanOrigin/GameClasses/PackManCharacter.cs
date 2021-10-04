@@ -19,21 +19,19 @@ namespace PackmanOrigin.GameClasses
         public int StartRowInd { get; set; }
         public int StartColInd { get; set; }
 
-        public int StartLives { get; set; }
+        public const int StartLives = 3; 
         public int Lives { get; set; }
 
-        public PackManCharacter(double leftLocation, double topLocation,int lives, int currentRowInd, int currentColInd,string imagePath = "/Assets/Images/pacman-eating.gif")
+        public PackManCharacter(double leftLocation, double topLocation, int currentRowInd, int currentColInd,string imagePath = "/Assets/Images/pacman-eating.gif")
             : base(leftLocation, topLocation, imagePath)
         {
-
             StartRowInd = currentRowInd;
             StartColInd = currentColInd;
             CurrentRowInd = currentRowInd;
             CurrentColInd = currentColInd;
             Image.Height = Height;
             Image.Width = WIDTH;
-            Lives = lives;
-            StartLives = lives;
+            Lives = StartLives;
         }
 
         public bool IscollidingWithBricksAndUpdateLocation(double newleft, double newtop,TileObject[,] tilesArray)
@@ -59,7 +57,7 @@ namespace PackmanOrigin.GameClasses
             return false;
         }
 
-        public bool IsCollidingWithCoins(double newleft, double newtop,List<Coin> coins,Canvas can,Action GameWon) // coins colliding, update coins + points in map  
+        public bool IsCollidingWithCoins(double newleft, double newtop,List<Coin> coins,Canvas can,Action GameWon) 
         {
             for (int i = 0; i < coins.Count; i++)
             {
@@ -79,7 +77,7 @@ namespace PackmanOrigin.GameClasses
 
             }
             return false;
-        }
+        } // coins colliding, update coins + points in map
 
         public bool IscollidingWithEnemies(double newleft, double newtop,List<Enemy> enemies,Action collisonLogic)
         {

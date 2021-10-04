@@ -8,7 +8,6 @@
             "/Assets/Images/PinkyPink (2).jpg", "/Assets/Images/OrangeLyde (2).jpg" 
          };
 
-
         public string this[int index] { get { return ImagePath[index]; } }
     }
 }
